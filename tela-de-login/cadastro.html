@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastrar.css">
+    <link rel="icon" href="img/icone-cadastro.png">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <div class="link">
+            <a href="login.html">Voltar</a>
+        </div>
+    </header>
+
+    <div class="topo">
+        <div class="principal">
+            <h1>Cadastrar</h1>
+            <form action="" autocomplete="off" id="form">
+                <label for="nome">Nome</label>
+                <div>
+                    <input class="input nome required" type="name" nome name="nome" oninput="nomeValido()">
+                    <span class="error">Digite um nome válido</span>
+                </div>
+                <label for="sobrenome">Sobrenome</label>
+                <div>
+                    <input class="input sobrenome required" type="name" nome name="sobrenome"
+                        oninput="sobrenomeValido()">
+                    <span class="error">Digite um sobrenome válido</span>
+                </div>
+                <label for="email">Email</label>
+                <div>
+                    <input class="input email required" type="email" name="email" oninput="emailValido()">
+                    <span class="error">Digite um Email válido</span>
+                </div>
+                <label for="senha">Senha</label>
+                <div>
+                    <input class="input senha required" type="password" name="senha" oninput="senhaValida()">
+                    <span class="error">Digite uma senha válido</span>
+                </div>
+                <label for="idade">Idade</label>
+                <div>
+                    <input class="input idade required" type="number" name="idade" oninput="idadeValida()">
+                    <span class="error">Digite uma idade maior que 10 anos</span>
+                </div>
+                <p>Sexo:</p>
+                <div class="sexo">
+                    <div>
+                        <input type="radio" name="sexo" value="M" id="M">
+                        <label for="M">Masculino</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sexo" value="F" id="F">
+                        <label for="F">Feminino</label>
+                    </div>
+
+                </div>
+                <div>
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const campos = document.querySelectorAll('.required');
+        const span = document.querySelectorAll('.error');
+        const email = /^\w+@[a-z]+\.[a-z]+$/;
+
+        form.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+            nomeValido()
+            sobrenomeValido()
+            emailValido()
+            senhaValida()
+            idadeValida()
+        })
+
+
+        function nomeValido() {
+            if (campos[0].value.length < 3) {
+                error(0);
+
+            } else {
+                valido(0);
+            }
+        }
+
+        function sobrenomeValido() {
+            if (campos[1].value.length < 3) {
+                error(1);
+
+            } else {
+                valido(1);
+            }
+        }
+
+        function emailValido() {
+            if (!email.test(campos[2].value)) {
+                error(2);
+            } else {
+                valido(2);
+            }
+        }
+
+        function senhaValida() {
+            if (campos[3].value.length < 8) {
+                error(3);
+
+            } else {
+                valido(3);
+            }
+        }
+
+        function idadeValida() {
+            if (campos[4].value.length > 1 && campos[4].value.length < 4) {
+                valido(4);
+
+            } else {
+                error(4);
+            }
+        }
+
+        function valido(index) {
+            campos[index].style.border = '2px solid green';
+            span[index].style.display = 'none';
+        }
+
+        function error(index) {
+            campos[index].style.border = '2px solid red';
+            span[index].style.display = 'block';
+
+        }
+
+    </script>
+</body>
+
+</html>

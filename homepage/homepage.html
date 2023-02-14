@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="py-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Landing Page</title>
+</head>
+<body> 
+<header id="descriçao-evento">
+    <div id="descriçao-dentro">
+        <h2>DonaPerola</h2>
+        <p class="paragrafo-evento">
+            Um evento para revolucionar a sua criatividade
+        </p>
+        <p>Data do Evento</p>
+        <p class="dia-evento">Terça, dia 26, as 20h30</p>
+    </div>
+    
+    <div id="formulario">
+        <p>Preencha o formulairo para receber informaçoes do evento</p>
+        <form>
+            <div class="grupo-form">
+                <label for="name">Nome</label>
+                <input type="text" name="name" placeholder="Coloque o seu nome">
+            </div>
+            <div class="grupo-form">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Coloque o seu E-mail">
+            </div>
+            <div class="grupo-form">
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" placeholder="Coloque o seu Telefone">
+            </div>
+            <div class="grupo-form">
+                <label for="interesse">Interesse</label>
+                <select name="interesse">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="massas">Massas</option>
+                    <option value="salgado">Salgado</option>
+                    <option value="doce">Doces</option>
+                </select>
+            </div>
+            <input type="submit" class="btn" value="Quero me inscrever">
+        </form>
+    </div>
+</header>
+
+<section id="principal">
+    <h2>Voce vai aprender:</h2>
+    <div class="beneficios">
+        <div class="beneficio">
+            <div id="beneficio-1" class="beneficio-img"></div>
+            <p>Alguma coisa muito top que ira fazer diferenca na vida do participante.</p>
+        </div>
+        <div class="beneficio">
+            <div id="beneficio-2" class="beneficio-img"></div>
+            <p>Alguma coisa muito top que ira fazer diferenca na vida do participante.</p>
+        </div>
+        <div class="beneficio">
+            <div id="beneficio-3" class="beneficio-img"></div>
+            <p>Alguma coisa muito top que ira fazer diferenca na vida do participante.</p>
+        </div>
+    </div>
+</section>
+
+<section id="local">
+    <div id="endereço">
+        <i class="bi bi-geo-alt-fill"></i>
+        <div id="detalhes-endereço">
+            <p>Rua EUROPA,1600</p>
+            <p>Bairro Europeu</p>
+            <p>Abertura: 14h ás 21h</p>
+
+        </div>
+    </div>
+    <div id="about-location">
+        <h3>Local de Destaque</h3>
+        <p>
+            O evento sera realizado em um evento super renomado e uma coziunha de ultima geraçao com acessorios de
+            qualidade. Venha conferir de perto todas as nossas maravilhas.
+        </p>
+    </div>
+</section>
+
+<section id="detalhes">
+    <div class="detalhe" id="detalhe-1">
+        <img src="imagens/pudin-evento.jpg">
+        <div class="descriçao-detalhe">
+            <h3>Conheça as receitas que voce vai aprender!</h3>
+        </div>
+    </div>
+
+    <div class="detalhe" id="detalhe-2">
+        <div class="descriçao-detalhe">
+            <h3>Detalhes</h3>
+            <ul>
+                <li>Recehios</li>
+                <li>Massas</li>
+                <li>Sobremesas</li>
+                <li>Salgados</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+        <img src="imagens/ingredientes-evento.jpg">
+    </div>
+
+    <div class="detalhe" id="detalhe-3">
+        <img src="Imagens/fundo-evento.jpg">
+        <div class="descriçao-detalhe">
+            <h3>Detalhes</h3>
+            <ul>
+                <li>Recehios=2</li>
+                <li>Massas=2</li>
+                <li>Sobremesas=2</li>
+                <li>Salgados=2</li>
+                <li>E muito mais...</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="inscreva-se">
+    <h3>Gostou? Entção se inscreva:</h3>
+    <button class="btn">Solicitar Inscrição</button>
+</section>
+
+<footer>
+    <h3>DonaPerola</h3>
+    <p>A evoluçao da gastronomia italiana!</p>
+    <p><span>Entre em contato:</span>donaperola@gmail.com</p>
+    <p><span>Ou pelo telefone:</span>(55)9999-9999</p>
+</footer>
+
+<div id="modal-inscreva-se" class="modal-container">
+    <div class="modal">
+        <button id="fechar">X</button>
+        <h3 class="subtitulo">Cadastre-se no evento</h3>
+        <form>
+            <input type="email" placeholder="Digite o seu email">
+            <input type="text" placeholder="Digite o seu nome">
+            <input type="submit" class="btn" value="Quero me inscrever">
+            <div class="msg-modal">
+                <p>*Se increva para o maior evento de gastronomia de São Paulo</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- function iniciaModal(modalID) {
+        if (localStorage.fechaModal !== modalID) {
+            const modal = document.getElementById(modalID);
+            if (modal) {
+                modal.classList.add('mostrar');
+                modal.addEventListener('click', (e) => {
+                    if (e.target.id == modalID || e.target.id == 'fechar') {
+                        modal.classList.remove('mostrar');
+                        localStorage.fechaModal = modalID;
+                    }
+                })
+            }
+        }
+    }
+
+    const botao = document.querySelector('#inscreva-se .btn');
+    botao.addEventListener('click', function () {
+        iniciaModal('modal-inscreva-se'); //ou () => iniciaModal('modal-promocao') na mesma linha
+    })-->
+
+<script>
+   function iniciaModal(modalID) {
+        const modal = document.getElementById(modalID);
+        if (modal) {
+            modal.classList.add('mostrar');
+            modal.addEventListener('click', (e) => {
+                if(e.target.id == modalID || e.target.id== 'fechar'){
+                    modal.classList.remove('mostrar');
+                }
+            })
+        }
+    }
+
+    const botao = document.querySelector('#inscreva-se .btn');
+    botao.addEventListener('click', function () {
+        iniciaModal('modal-inscreva-se'); //ou () => iniciaModal('modal-promocao') na mesma linha
+    })
+
+   
+</script>
+</body>
+</html>
